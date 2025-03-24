@@ -1,0 +1,340 @@
+I'll run all available Tracxn API functions and provide you with their outputs and error messages.View result from test_connection from tracxn (local){}Connection error: 401 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesView result from minimal_test from tracxn (local){}All header formats failed. Please check your token and permissions.
+
+Results: [
+  {
+    "header_format": "Format 1: {'accessToken': 'f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z'}",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  {
+    "header_format": "Format 2: {'accesstoken': 'f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z'}",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  {
+    "header_format": "Format 3: {'access-token': 'f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z'}",
+    "status_code": 403,
+    "success": false,
+    "error": "{\"errorCode\":403000000,\"message\":\"Invalid web session access. No user.\"}"
+  },
+  {
+    "header_format": "Format 4: {'Authorization': 'Bearer f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z'}",
+    "status_code": 403,
+    "success": false,
+    "error": "{\"errorCode\":403000000,\"message\":\"Invalid web session access. No user.\"}"
+  },
+  {
+    "header_format": "Format 5: {'accessToken': 'f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z', 'User-Agent': 'Tracxn Client/1.0'}",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  {
+    "header_format": "Format 6: {'X-API-Key': 'f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z'}",
+    "status_code": 403,
+    "success": false,
+    "error": "{\"errorCode\":403000000,\"message\":\"Invalid web session access. No user.\"}"
+  }
+]View result from test_with_header_format from tracxn (local){
+  `format`: `default`
+}Connection error with 'default' format: 401 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesView result from test_with_header_format from tracxn (local){
+  `format`: `hyphenated`
+}Connection error with 'hyphenated' format: 403 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesView result from test_with_header_format from tracxn (local){
+  `format`: `bearer`
+}Connection error with 'bearer' format: 403 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesView result from test_with_header_format from tracxn (local){
+  `format`: `all_lower`
+}Connection error with 'all_lower' format: 401 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesView result from test_with_user_agent from tracxn (local){}[
+  {
+    "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  {
+    "user_agent": "Tracxn API Client/1.0",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  {
+    "user_agent": "Python Requests/2.25.1",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  {
+    "user_agent": "curl/7.64.1",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  }
+]View result from test_alternative_urls from tracxn (local){}[
+  {
+    "base_url": "https://platform.tracxn.com/api/2.2/playground",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  {
+    "base_url": "https://api.tracxn.com/api/2.2/playground",
+    "error": "HTTPSConnectionPool(host='api.tracxn.com', port=443): Max retries exceeded with url: /api/2.2/playground/companies (Caused by NameResolutionError(\"<urllib3.connection.HTTPSConnection object at 0x1113cc250>: Failed to resolve 'api.tracxn.com' ([Errno 8] nodename nor servname provided, or not known)\"))"
+  },
+  {
+    "base_url": "https://platform.tracxn.com/playground/api/2.2",
+    "status_code": 404,
+    "success": false,
+    "error": "<html>\n<head>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1\""
+  },
+  {
+    "base_url": "https://platform.tracxn.com/api/playground/2.2",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  {
+    "base_url": "https://platform.tracxn.com/playground",
+    "status_code": 404,
+    "success": false,
+    "error": "<html>\n<head>\n    <meta name=\"viewport\" content=\"width=device-width,initial-scale=1,maximum-scale=1\""
+  },
+  {
+    "base_url": "https://platform.tracxn.com/api/2.2",
+    "status_code": 401,
+    "success": false,
+    "error": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  }
+]View result from detailed_debug from tracxn (local){}{
+  "variation_1": {
+    "headers": {
+      "accessToken": "f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z"
+    },
+    "response": {
+      "status_code": 401,
+      "response_text": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+    }
+  },
+  "variation_2": {
+    "headers": {
+      "access-token": "f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z"
+    },
+    "response": {
+      "status_code": 403,
+      "response_text": "{\"errorCode\":403000000,\"message\":\"Invalid web session access. No user.\"}"
+    }
+  },
+  "variation_3": {
+    "headers": {
+      "Access-Token": "f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z"
+    },
+    "response": {
+      "status_code": 403,
+      "response_text": "{\"errorCode\":403000000,\"message\":\"Invalid web session access. No user.\"}"
+    }
+  },
+  "variation_4": {
+    "headers": {
+      "Authorization": "Bearer f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z"
+    },
+    "response": {
+      "status_code": 403,
+      "response_text": "{\"errorCode\":403000000,\"message\":\"Invalid web session access. No user.\"}"
+    }
+  },
+  "variation_5": {
+    "headers": {
+      "token": "f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z"
+    },
+    "response": {
+      "status_code": 403,
+      "response_text": "{\"errorCode\":403000000,\"message\":\"Invalid web session access. No user.\"}"
+    }
+  },
+  "variation_6": {
+    "headers": {
+      "api-key": "f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z"
+    },
+    "response": {
+      "status_code": 403,
+      "response_text": "{\"errorCode\":403000000,\"message\":\"Invalid web session access. No user.\"}"
+    }
+  }
+}View result from debug_api from tracxn (local){}{
+  "url": "https://platform.tracxn.com/api/2.2/playground/companies",
+  "headers": {
+    "accessToken": "f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z"
+  },
+  "data": {
+    "filter": {
+      "feedName": [
+        "Cybersecurity"
+      ]
+    },
+    "size": 1
+  },
+  "response": {
+    "status_code": 401,
+    "response_headers": {
+      "Date": "Wed, 19 Mar 2025 05:05:19 GMT",
+      "Content-Type": "application/json;charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "cache-control": "no-cache, no-store, must-revalidate",
+      "pragma": "no-cache",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "default-src 'self'",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-txn-request-id": "496a915b-3347-407f-b0a4-ba31b20c64d2",
+      "x-application-context": "application:prod:80",
+      "content-encoding": "gzip",
+      "vary": "Accept-Encoding",
+      "x-response-time": "10"
+    },
+    "response_text": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  }
+}View result from debug_api_direct from tracxn (local){}{
+  "url": "https://platform.tracxn.com/api/2.2/playground/companies",
+  "headers": {
+    "accessToken": "f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z"
+  },
+  "data": {
+    "filter": {
+      "feedName": [
+        "Cybersecurity"
+      ]
+    },
+    "size": 1
+  },
+  "token_length": 37,
+  "token_preview": "f8a4e...be32z",
+  "response": {
+    "status_code": 401,
+    "response_headers": {
+      "Date": "Wed, 19 Mar 2025 05:05:21 GMT",
+      "Content-Type": "application/json;charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "cache-control": "no-cache, no-store, must-revalidate",
+      "pragma": "no-cache",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "default-src 'self'",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-txn-request-id": "192ed969-520f-4ed4-9160-3e3f908d6494",
+      "x-application-context": "application:prod:80",
+      "content-encoding": "gzip",
+      "vary": "Accept-Encoding",
+      "x-response-time": "9"
+    },
+    "response_text": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  }
+}View result from custom_api_request from tracxn (local){}{
+  "status_code": 401,
+  "headers_sent": {
+    "accessToken": "f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z",
+    "Content-Type": "application/json"
+  },
+  "response_text": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}",
+  "response_headers": {
+    "Date": "Wed, 19 Mar 2025 05:05:24 GMT",
+    "Content-Type": "application/json;charset=UTF-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY",
+    "cache-control": "no-cache, no-store, must-revalidate",
+    "pragma": "no-cache",
+    "x-xss-protection": "1; mode=block",
+    "content-security-policy": "default-src 'self'",
+    "referrer-policy": "no-referrer",
+    "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+    "x-txn-request-id": "96b8629f-312d-43de-8967-457bf3d94b51",
+    "x-application-context": "application:prod:80",
+    "content-encoding": "gzip",
+    "vary": "Accept-Encoding",
+    "x-response-time": "10"
+  }
+}View result from get_support_info from tracxn (local){}{
+  "token_length": 37,
+  "token_preview": "f8a4e...be32z",
+  "api_base": "https://platform.tracxn.com/api/2.2/playground",
+  "python_version": "3.10.16 (main, Dec 11 2024, 10:22:29) [Clang 14.0.6 ]",
+  "requests_version": "2.32.3",
+  "environment": {
+    "platform": "darwin",
+    "has_token_env_var": true
+  },
+  "test_request": {
+    "status_code": 401,
+    "response_headers": {
+      "Date": "Wed, 19 Mar 2025 05:05:31 GMT",
+      "Content-Type": "application/json;charset=UTF-8",
+      "Transfer-Encoding": "chunked",
+      "Connection": "keep-alive",
+      "x-content-type-options": "nosniff",
+      "x-frame-options": "DENY",
+      "cache-control": "no-cache, no-store, must-revalidate",
+      "pragma": "no-cache",
+      "x-xss-protection": "1; mode=block",
+      "content-security-policy": "default-src 'self'",
+      "referrer-policy": "no-referrer",
+      "strict-transport-security": "max-age=31536000; includeSubDomains; preload",
+      "x-txn-request-id": "1cbb184e-55cc-4a87-9386-be6b81d3a1eb",
+      "x-application-context": "application:prod:80",
+      "content-encoding": "gzip",
+      "vary": "Accept-Encoding",
+      "x-response-time": "78"
+    },
+    "response_text": "{\"errorCode\":401670000,\"message\":\"Token was not recognised\"}"
+  },
+  "curl_command": "\n    curl -v -X POST 'https://platform.tracxn.com/api/2.2/playground/companies' \\\n      -H 'accessToken: f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z' \\\n      -H 'Content-Type: application/json' \\\n      -d '{\"filter\": {\"feedName\": [\"Cybersecurity\"]}, \"size\": 1}'\n    "
+}View result from get_curl_command from tracxn (local){}
+    curl -X POST 'https://platform.tracxn.com/api/2.2/playground/companies' \
+      -H 'accessToken: f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z' \
+      -H 'Content-Type: application/json' \
+      -d '{"filter": {"feedName": ["Cybersecurity"]}, "size": 1}'
+    View result from search_companies from tracxn (local){}Error: 401 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesView result from company_details from tracxn (local){
+  `domain`: `tracxn.com`
+}Error: 401 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesView result from search_by_sector from tracxn (local){
+  `sector`: `Cybersecurity`
+}Error: 401 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesView result from top_funded_companies from tracxn (local){}Error: 401 Client Error:  for url: https://platform.tracxn.com/api/2.2/playground/companiesHere's a summary of all the errors and outputs from the Tracxn API functions:
+Test Connection Results
+
+All basic connection tests return 401 Client Error with the message "Token was not recognised" (error code: 401670000)
+
+Header Format Tests
+
+Default format (accessToken): 401 Error - "Token was not recognised"
+Hyphenated format (access-token): 403 Error - "Invalid web session access. No user."
+Bearer format (Authorization: Bearer): 403 Error - "Invalid web session access. No user."
+All lowercase format: 401 Error - "Token was not recognised"
+
+User Agent Tests
+
+All user agent variations return 401 Error with "Token was not recognised"
+
+URL Tests
+
+Primary URL (https://platform.tracxn.com/api/2.2/playground): 401 Error - "Token was not recognised"
+Alternative URL (https://api.tracxn.com/api/2.2/playground): DNS resolution error
+Other URL variants: Either 401 Error or 404 Not Found
+
+API Function Tests
+
+search_companies: 401 Error
+company_details: 401 Error
+search_by_sector: 401 Error
+top_funded_companies: 401 Error
+
+Token Information
+
+Token being used: f8a4e2b3-4a77-4ae1-b43d-2ade3412be32z
+Token length: 37 characters
+
+The consistent error pattern across all functions confirms that the primary issue is with the authentication token. The system is correctly connecting to the Tracxn API servers, but the token is not being recognized as valid.
